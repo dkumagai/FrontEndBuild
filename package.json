@@ -2,11 +2,12 @@
   "name": "FrontEnd",
   "version": "0.0.1",
   "devDependencies": {
+    "grunt-cli": ">=0.1.11"
     "grunt": ">=0.4.1",
     "grunt-contrib-clean": ">=0.5.0",
     "grunt-contrib-compass": ">=0.6.0",
     "grunt-contrib-require": ">=0.4.1",
     "grunt-mocha": ">=1.13.0",
-    "grunt-contrib-jshint": ">=0.7.2"
+    "grunt-contrib-jshint": ">=0.7.2",
   }
 }
