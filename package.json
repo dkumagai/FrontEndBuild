@@ -2,7 +2,7 @@
   "name": "FrontEnd",
   "version": "0.0.1",
   "devDependencies": {
-    "grunt-cli": ">=0.1.11"
+    "grunt-cli": ">=0.1.11",
     "grunt": ">=0.4.1",
     "grunt-contrib-clean": ">=0.5.0",
     "grunt-contrib-compass": ">=0.6.0",
