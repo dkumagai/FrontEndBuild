@@ -28,7 +28,12 @@ module.exports = function(config) {
 
     // test results reporter to use
     // possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'
-    reporters: ['progress'],
+    reporters: ['progress', "html"],
+
+    htmlReporter: {
+        outputDir: 'karma_html',
+        templatePath: __dirname+'/node_modules/karma-html-reporter/jasmine_template.html'
+    },
 
 
     // web server port
