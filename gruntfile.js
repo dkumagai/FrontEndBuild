@@ -38,11 +38,18 @@ module.exports = function(grunt){
 		clean : {
 			compile : ["./frontend-build", "./frontend/css", "./frontend/.sass-cache"]
 		},
-		mocha : {
+		karma : {
 			test : {
-				src : ["./frontend/spec/*.html"],
+				configFile : "karma.conf.js",
+				singleRun : true,
 				options : {
-					run : true
+					files : [
+						"./frontend/spec/javascripts/lib/chai.js",
+        				"./frontend/spec/javascripts/mocha-setup.js",
+        				{
+        					pattern: './frontend/spec/tests/*.js', included: true
+        				}
+        			]
 				}
 			}
 		},
@@ -60,8 +67,8 @@ module.exports = function(grunt){
 	//grunt.loadNpmTasks('grunt-contrib-compass');
 	grunt.loadNpmTasks('grunt-contrib-requirejs');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
-	grunt.loadNpmTasks('grunt-mocha');
+	grunt.loadNpmTasks('grunt-karma');
 	
-	grunt.registerTask("test", ["mocha", "jshint"]);
+	grunt.registerTask("test", ["karma", "jshint"]);
 	grunt.registerTask("default", ["clean", "compass:clean", "compass:compile", "requirejs:compile"]);
 }
