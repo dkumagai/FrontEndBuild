@@ -7,13 +7,6 @@ module.exports = function(grunt){
 					config : "frontend/config.rb",
 					basePath : "frontend",
 				}
-			},
-			clean : {
-				options : {
-					config : "frontend/config.rb",
-					basePath : "frontend",
-					clean : true
-				}
 			}
 		},
 		requirejs : {
@@ -36,7 +29,11 @@ module.exports = function(grunt){
 			}
 		},
 		clean : {
-			compile : ["./frontend-build", "./frontend/css", "./frontend/.sass-cache"]
+			compile : [
+				"./frontend-build", 
+				"./frontend/css", 
+				"./frontend/.sass-cache"
+			]
 		},
 		karma : {
 			test : {
@@ -64,7 +61,7 @@ module.exports = function(grunt){
 	});
 	
 	grunt.loadNpmTasks('grunt-contrib-clean');
-	//grunt.loadNpmTasks('grunt-contrib-compass');
+	grunt.loadNpmTasks('grunt-contrib-compass');
 	grunt.loadNpmTasks('grunt-contrib-requirejs');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-karma');
