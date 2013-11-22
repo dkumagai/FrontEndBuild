@@ -57,51 +57,48 @@ body { background-color: #eeeeee; padding: 0; margin: 5px; overflow-y: scroll; }
  </script>
 </head>
 
-<body id="HTMLReporter" class="html-reporter{{#results.hasFailed}} showDetails{{/results.hasFailed}}">
-<h1>{{browserName}}</h1>
+<body id="HTMLReporter" class="html-reporter showDetails">
+<h1>Chrome 31.0.1650 (Mac OS X 10.8.5)</h1>
 
 <div class="alert">
-{{#results}}
-{{#hasFailed}}
-<span class="failingAlert bar">Failed {{failed}} specs</span>
+
+
+<span class="failingAlert bar">Failed 1 specs</span>
 <span class="resultsMenu bar">
-<a class="summaryMenuItem" href="#">{{total}} specs<a>|<a class="detailsMenuItem" href="#">{{failed}} failing</a>
+<a class="summaryMenuItem" href="#">1 specs<a>|<a class="detailsMenuItem" href="#">1 failing</a>
 </span>
-{{/hasFailed}}
-{{^hasFailed}}
-	{{#hasSuccess}}
-	<span class="passingAlert bar">Passing {{success}} specs</span>
-	{{/hasSuccess}}
-{{/hasFailed}}
-{{/results}}
+
+
+
 </div>
 <div class="results">
 	<div class="summary">
 
 
-	{{#suites}}
-		<div class="suite {{state}}">
-			<span class="description">{{name}}</span>
-		{{#specs}}
-			<div class="specSummary {{state}}">
-			<span class="description">{{description}}</span>
+	
+		<div class="suite failed">
+			<span class="description">Array .indexOf()</span>
+		
+			<div class="specSummary failed">
+			<span class="description">should return -1 when the value is not present</span>
 			</div>
-		{{/specs}}
+		
 		</div>
-	{{/suites}}
+	
 </div>
 
 <div id="details">
-	{{#failedSuites}}
-	{{#specs}}
-	<div class="specDetail {{state}}">
-		<span class="description">{{name}} {{description}}</span>
+	
+	
+	<div class="specDetail failed">
+		<span class="description">Array .indexOf() should return -1 when the value is not present</span>
 		<div class="stackTrace">
-			<div class="resultMessage">{{log}}</div>
+			<div class="resultMessage">Unspecified AssertionError
+AssertionError: Unspecified AssertionError</div>
 		</div>
 	</div>
-	{{/specs}}
-	{{/failedSuites}}
+	
+	
 </div>
 </body>
 </html>
